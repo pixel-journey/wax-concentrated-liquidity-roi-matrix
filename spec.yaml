@@ -1,0 +1,23 @@
+name: wax-concentrated-liquidity-roi-matrix
+trust_label: educational-reference
+version: 0.1.0
+purpose: >
+  Subtract full-range IL from a fee the caller counted. Capital is 8-decimal WAX.
+invariants:
+  - src/roi.ts performs no network or wallet calls.
+  - Requests in src/usecases.ts set executed to false.
+  - No use case contains a transaction.
+do_not:
+  - Do not add a live Alcor client and keep this trust label.
+  - Do not describe a fixture as a mainnet response.
+entrypoints:
+  logic: src/roi.ts
+  tests: src/roi.test.ts
+  demo: src/Demo.tsx
+  queries: src/usecases.ts
+commands:
+  test: npm test
+  demo: npm run dev
+live_data:
+  status: untested
+  notes: No endpoint was called.
