@@ -1,7 +1,7 @@
 # Fees minus a price move
 
 **Trust label:** `educational-reference`  
-**Catalog:** [wax-ecosystem-blueprint-catalog](https://github.com/pixel-journey/wax-ecosystem-blueprint-catalog)
+**Catalog:** `wax-ecosystem-blueprint-catalog` (private index; not this public course)
 
 Caller-supplied fees minus full-range IL. Not a forecast and not historical volume.
 
@@ -16,12 +16,16 @@ The August 2026 README described live Alcor depth, a vesting NFT, or a forecast.
 | `src/usecases.ts` | HTTP requests, built and not sent. No transaction is invented |
 | `src/Demo.tsx` | Offline page |
 
-`npm test` runs the rules. `npm run dev` opens the page.
+The course is [EDUCATION.md](EDUCATION.md). `npm test` runs the rules. `npm run dev` opens the page.
+
+## Related
+
+- [full-range IL](https://github.com/pixel-journey/wax-lp-impermanent-loss-heat-map) — the same integer formula, without the fee subtraction
+- [band width](https://github.com/pixel-journey/wax-alcor-v2-range-optimizer) — not this loss
+- [alcor-exchange](https://github.com/alcor-exchange)
+
+Do not describe this page as an Alcor position, a live swap, or concentrated-liquidity IL.
 
 ## Queries and unsigned transactions
 
 `src/api.ts` builds nodeos and Hyperion requests. The Alcor URL is `GET https://wax.alcor.exchange/api/markets`, the market list, not a depth or volume feed. `executed` is false. This repo did not call any host.
-
-## Related
-
-See the catalog. Do not describe this page as an Alcor position, a live swap, or a token unlock on an NFT.
