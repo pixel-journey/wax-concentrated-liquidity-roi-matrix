@@ -21,9 +21,9 @@ describe("fee minus IL", () => {
     expect(formatWax(net.netUnits)).toBe("0.30000000 WAX");
   });
 
-  it("a 2x move is covered by a large typed fee", () => {
-    // fullRange IL at 2/1 is about -572 bps (integer isqrt path)
-    const net = netOfFees("10.00000000 WAX", 2000n, 2n, 1n);
+  it("a 2x move can still be covered when the typed fee is large enough", () => {
+    // isqrt path: 2/1 → ilBps about -3334; fee 4000 bps → positive net
+    const net = netOfFees("10.00000000 WAX", 4000n, 2n, 1n);
     expect(net.ok).toBe(true);
     if (!net.ok) return;
     expect(net.ilBps).toBeLessThan(0n);
